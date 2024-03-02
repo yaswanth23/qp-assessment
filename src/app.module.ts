@@ -6,6 +6,7 @@ import { AppService } from "./app.service";
 import { LoggingInterceptor } from "./middleware/logging.interceptor";
 import { JsonHeaderInterceptor } from "./middleware/jsonHeader.interceptor";
 import { PrismaModule } from "./modules/prisma/prisma.module";
+import { AdminModule } from "./modules/admin/admin.module";
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { PrismaModule } from "./modules/prisma/prisma.module";
       envFilePath: `.env.${process.env.NODE_ENV}`,
     }),
     PrismaModule,
+    AdminModule,
   ],
   controllers: [AppController],
   providers: [

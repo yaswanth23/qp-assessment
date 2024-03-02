@@ -4,6 +4,7 @@ import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
 import { ValidationPipe } from "@nestjs/common";
 import { BigIntSerializerPipe } from "./common/pipes/bigIntSerializer.pipe";
 import { BigIntInterceptor } from "./common/interceptors/bigInt.interceptor";
+import { AdminModule } from "./modules/admin/admin.module";
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -19,7 +20,7 @@ async function bootstrap() {
       .addTag("Grocery booking System")
       .build();
     const document = SwaggerModule.createDocument(app, config, {
-      include: [AppModule],
+      include: [AppModule, AdminModule],
       deepScanRoutes: true,
       operationIdFactory: (controllerKey: string, methodKey: string) =>
         methodKey,
