@@ -7,6 +7,7 @@ import { LoggingInterceptor } from "./middleware/logging.interceptor";
 import { JsonHeaderInterceptor } from "./middleware/jsonHeader.interceptor";
 import { PrismaModule } from "./modules/prisma/prisma.module";
 import { AdminModule } from "./modules/admin/admin.module";
+import { UserModule } from "./modules/user/user.module";
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { AdminModule } from "./modules/admin/admin.module";
     }),
     PrismaModule,
     AdminModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [
