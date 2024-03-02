@@ -41,3 +41,9 @@ After all dependencies are successfully installed, start the application in deve
 # development
 $ NODE_ENV=development npm run start:dev
 ```
+
+Once the server is up and running you can view all the apis in swagger
+
+```bash
+http://localhost:9000/api
+```
