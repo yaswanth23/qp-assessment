@@ -12,3 +12,12 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model groceris {
+  groceryId          BigInt   @id
+  groceryName        String
+  price              Float
+  inventoryQuantity  Int
+  createdOn          DateTime? @db.Timestamp(6)
+  updatedOn          DateTime? @db.Timestamp(6)
+}
